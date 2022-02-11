@@ -8,8 +8,6 @@
   $: loading.setNavigate(!!$navigating);
 </script>
 
-{$loading}
-
 <slot />
 
 <button on:click={() => loading.setLoading(true, "I'm loading")}>Set Loading</button>

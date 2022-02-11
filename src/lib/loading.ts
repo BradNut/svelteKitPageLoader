@@ -1,17 +1,17 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
 const newLoading = () => {
   const { subscribe, update, set } = writable({
-    status: "IDLE", // IDLE, LOADING, NAVIGATING
-    message: ""
+    status: 'IDLE', // IDLE, LOADING, NAVIGATING
+    message: '',
   });
 
   function setNavigate(isNavigating: boolean) {
     update(() => {
       return {
         status: isNavigating ? 'NAVIGATING' : 'IDLE',
-        message: ''
-      }
+        message: '',
+      };
     });
   }
 
@@ -19,12 +19,12 @@ const newLoading = () => {
     update(() => {
       return {
         status: isLoading ? 'LOADING' : 'IDLE',
-        message: isLoading ? message : ''
-      }
-    })
+        message: isLoading ? message : '',
+      };
+    });
   }
 
   return { subscribe, update, set, setNavigate, setLoading };
-}
+};
 
 export const loading = newLoading();

@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { loading } from '$lib/loading';
+  import { loading } from '$lib/loading'
 
   $: if ($loading.status === 'NAVIGATING') {
     setTimeout(() => {
       if ($loading.status === 'NAVIGATING') {
-        $loading.status = 'LOADING';
+        $loading.status = 'LOADING'
       }
-    }, 400);
+    }, 400)
   }
 </script>
 
@@ -25,7 +25,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    inset: calc(50% - calc(var(--size) / 2));
+    inset: calc(50% - calc(var(--size)/2));
     background: purple;
     border-radius: var(--size);
     height: var(--size);
@@ -35,11 +35,10 @@
 
   @keyframes moveLoader {
     from {
-      transform: translate3d(100px, 0, 0);
+      transform: translate3d(100px, 0, 0)
     }
-
     to {
-      transform: translate3d(-100px, 0, 0);
+      transform: translate3d(-100px, 0, 0)
     }
   }
 </style>
